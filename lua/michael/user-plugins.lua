@@ -1,5 +1,7 @@
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+	--colorschemes
+	{ "rafamadriz/neon" },
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",

@@ -1,9 +1,41 @@
-require("lua.michael.core.options")
-require("lua.michael.core.general")
-require("lua.michael.core.keymaps")
-require("lua.michael.user-plugins")
+require("michael.core.options")
+require("michael.core.keymaps")
+require("michael.user-plugins")
 
--- general
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	{ command = "stylua" },
+	{
+		command = "prettier",
+		extra_args = { "--print-width", "100" },
+		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+	},
+	{
+		command = "csharpier",
+		filetypes = { "cs" },
+	},
+})
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+	{ command = "flake8", filetypes = { "python" } },
+	{
+		command = "shellcheck",
+		args = { "--severity", "warning" },
+	},
+	{
+		command = "eslint",
+		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+	},
+})
+
+-- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "zsh",
+--   callback = function()
+--     -- let treesitter use bash highlight for zsh files as well
+--     require("nvim-treesitter.highlight").attach(0, "bash")
+--   end,
+-- })
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -41,38 +73,3 @@ require("lua.michael.user-plugins")
 -- 	--Enable completion triggered by <c-x><c-o>
 -- 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
-
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-	{ command = "stylua" },
-	{
-		command = "prettier",
-		extra_args = { "--print-width", "100" },
-		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-	},
-	{
-		command = "csharpier",
-		filetypes = { "cs" },
-	},
-})
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({
-	{ command = "flake8", filetypes = { "python" } },
-	{
-		command = "shellcheck",
-		args = { "--severity", "warning" },
-	},
-	{
-		command = "eslint",
-		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-	},
-})
-
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })

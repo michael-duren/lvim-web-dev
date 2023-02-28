@@ -3,11 +3,6 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 
-lvim.log.level = "info"
-lvim.format_on_save = {
-	enabled = true,
-	timeout = 1000,
-}
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"

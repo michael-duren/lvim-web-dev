@@ -2,26 +2,20 @@ require("michael.core.options")
 require("michael.core.keymaps")
 require("michael.user-plugins")
 require("michael.plugin-settings.rose-pine")
+require("michael.plugin-settings.ts-autotag")
+require("michael.plugin-settings.colorizer")
+require("michael.plugin-settings.lspsaga")
 
+--color scheme
 lvim.colorscheme = "rose-pine"
 
--- vim.opt.guicursor = "n-v-c-sm:block, i-ci:ver30-iCursor-blinkwait300-blinkon200-blinkoff150"
-local status, autotag = pcall(require, "nvim-ts-autotag")
-if not status then
-	return
-end
+--formatting and linting
+lvim.log.level = "info"
+lvim.format_on_save = {
+	enabled = true,
+	timeout = 5000,
+}
 
-autotag.setup({})
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
--- 	underline = true,
--- 	virtual_text = {
--- 		spacing = 5,
--- 		severity_limit = "Warning",
--- 	},
--- 	update_in_insert = true,
--- })
-
--- lvim.builtin.treesitter.playground.enable = true
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "stylua" },
@@ -48,27 +42,55 @@ linters.setup({
 	},
 })
 
+-- lvim.builtin.treesitter.playground.enable = true
+-- local formatters = require("lvim.lsp.null-ls.formatters")
+-- formatters.setup({
+-- 	{ command = "stylua" },
+-- 	{
+-- 		command = "prettier",
+-- 		extra_args = { "--print-width", "100" },
+-- 		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+-- 	},
+-- 	{
+-- 		command = "csharpier",
+-- 		filetypes = { "cs" },
+-- 	},
+-- })
+-- local linters = require("lvim.lsp.null-ls.linters")
+-- linters.setup({
+-- 	{ command = "flake8", filetypes = { "python" } },
+-- 	{
+-- 		command = "shellcheck",
+-- 		args = { "--severity", "warning" },
+-- 	},
+-- 	{
+-- 		command = "eslint",
+-- 		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+-- 	},
+-- })
+
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "zsh",
-	callback = function()
-		-- let treesitter use bash highlight for zsh files as well
-		require("nvim-treesitter.highlight").attach(0, "bash")
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "zsh",
+-- 	callback = function()
+-- 		-- let treesitter use bash highlight for zsh files as well
+-- 		require("nvim-treesitter.highlight").attach(0, "bash")
+-- 	end,
+-- })
 
-require("nvim-treesitter.configs").setup({
-	autotag = {
-		true,
-	},
+-- additional autotag config, don't know if this did anything
+-- require("nvim-treesitter.configs").setup({
+-- 	autotag = {
+-- 		true,
+-- 	},
 
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
-})
+-- 	{
+-- 		"windwp/nvim-ts-autotag",
+-- 		config = function()
+-- 			require("nvim-ts-autotag").setup()
+-- 		end,
+-- 	},
+-- })
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"

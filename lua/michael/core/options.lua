@@ -14,6 +14,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.nvimtree.setup.view.width = 35
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true

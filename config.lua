@@ -1,7 +1,27 @@
 require("michael.core.options")
 require("michael.core.keymaps")
 require("michael.user-plugins")
+require("michael.plugin-settings.rose-pine")
 
+lvim.colorscheme = "rose-pine"
+
+-- vim.opt.guicursor = "n-v-c-sm:block, i-ci:ver30-iCursor-blinkwait300-blinkon200-blinkoff150"
+local status, autotag = pcall(require, "nvim-ts-autotag")
+if not status then
+	return
+end
+
+autotag.setup({})
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+-- 	underline = true,
+-- 	virtual_text = {
+-- 		spacing = 5,
+-- 		severity_limit = "Warning",
+-- 	},
+-- 	update_in_insert = true,
+-- })
+
+-- lvim.builtin.treesitter.playground.enable = true
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ command = "stylua" },
@@ -28,14 +48,27 @@ linters.setup({
 	},
 })
 
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+-- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "zsh",
+	callback = function()
+		-- let treesitter use bash highlight for zsh files as well
+		require("nvim-treesitter.highlight").attach(0, "bash")
+	end,
+})
+
+require("nvim-treesitter.configs").setup({
+	autotag = {
+		true,
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+})
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"

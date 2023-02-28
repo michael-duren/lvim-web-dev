@@ -5,7 +5,7 @@ require("michael.plugin-settings.rose-pine")
 require("michael.plugin-settings.ts-autotag")
 require("michael.plugin-settings.colorizer")
 require("michael.plugin-settings.lspsaga")
-
+-- require("michael.plugin-settings.typescript")
 --color scheme
 lvim.colorscheme = "rose-pine"
 

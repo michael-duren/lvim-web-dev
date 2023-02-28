@@ -20,6 +20,14 @@ lvim.plugins = {
 
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 
+	{
+		"jose-elias-alvarez/typescript.nvim",
+		config = function()
+			require("typescript").setup({})
+		end,
+	},
+	{ "onsails/lspkind.nvim" },
+
 	--lsp sage for TS
 	{
 		"glepnir/lspsaga.nvim",

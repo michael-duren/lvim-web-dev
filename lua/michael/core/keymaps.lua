@@ -23,7 +23,17 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --typescript rename symbol
-lvim.keys.normal_mode["leader>rf"] = ":TypescriptRenameFile<CR>"
 
--- remove which key for "l"
-lvim.builtin.which_key.mappings["l"] = {}
+-- remap to lsp-saga
+lvim.lsp.buffer_mappings.normal_mode["K"] = { ":Lspsaga peek_definition<CR>" } -- peek def
+lvim.lsp.buffer_mappings.normal_mode["gd"] = { ":Lspsaga goto_definition<CR>" } -- go to def
+
+-- lspsaga maps
+lvim.lsp.buffer_mappings.normal_mode["<leader>rn"] = { ":Lspsaga rename<CR>" }
+lvim.lsp.buffer_mappings.normal_mode["<leader>gf"] = { ":Lspsaga lsp_finder<CR>" } -- go (peek)(detailed) to finder window
+lvim.lsp.buffer_mappings.normal_mode["<leader>ca"] = { ":Lspsaga code_action<CR>" }
+
+-- typescript maps
+lvim.lsp.buffer_mappings.normal_mode["<leader>rf"] = { ":TypescriptRenameFile<CR>" }
+lvim.lsp.buffer_mappings.normal_mode["<leader>oi"] = { "TypescriptOrganizeImports<CR>" }
+lvim.lsp.buffer_mappings.normal_mode["<leader>ru"] = { ":TypescriptRemoveUnused<CR>" }

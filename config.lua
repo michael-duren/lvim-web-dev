@@ -1,11 +1,12 @@
-require("michael.core.options")
-require("michael.core.keymaps")
-require("michael.user-plugins")
-require("michael.plugin-settings.rose-pine")
-require("michael.plugin-settings.ts-autotag")
-require("michael.plugin-settings.colorizer")
-require("michael.plugin-settings.lspsaga")
--- require("michael.plugin-settings.typescript")
+reload("michael.core.options")
+reload("michael.core.keymaps")
+reload("michael.user-plugins")
+reload("michael.plugin-settings.rose-pine")
+reload("michael.plugin-settings.ts-autotag")
+reload("michael.plugin-settings.colorizer")
+reload("michael.plugin-settings.lspsaga")
+reload("michael.plugin-settings.lsp")
+
 --color scheme
 lvim.colorscheme = "rose-pine"
 

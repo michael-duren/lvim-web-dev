@@ -4,6 +4,11 @@ lvim.leader = "space"
 -- write(save) with control S
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+--buffers mapped to behave like vs code
+lvim.keys.normal_mode["<C-w>"] = ":bd<CR>" -- close current split window
+lvim.keys.normal_mode["<C-]>"] = ":bn<CR>" -- close current split window
+lvim.keys.normal_mode["<C-[>"] = ":bp<CR>" -- close current split window
+
 -- splitting windows
 lvim.keys.normal_mode["<leader>sv"] = "<C-w>v" -- split window vertically
 lvim.keys.normal_mode["<leader>s-"] = "<C-w>s" -- split window horizontally

@@ -15,6 +15,7 @@ lvim.keys.normal_mode["<leader>s-"] = "<C-w>s" -- split window horizontally
 lvim.keys.normal_mode["<leader>se"] = "<C-w>=" -- make split windows equal width & height
 lvim.keys.normal_mode["<leader>sx"] = ":close<CR>" -- close current split window
 
+lvim.keys.normal_mode["<leader>sm"] = ":MaximizerToggle<CR>" -- toggle split window maximization
 -- scroll horizontally
 lvim.keys.normal_mode["<A-l>"] = { "zl" }
 lvim.keys.normal_mode["<A-h>"] = { "zh" }

@@ -20,6 +20,8 @@ lvim.plugins = {
 
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 
+	{ "szw/vim-maximizer" }, -- maximizes and restores current window
+
 	{
 		"jose-elias-alvarez/typescript.nvim",
 		config = function()

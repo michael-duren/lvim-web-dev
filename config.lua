@@ -6,9 +6,7 @@ reload("michael.plugin-settings.ts-autotag")
 reload("michael.plugin-settings.colorizer")
 reload("michael.plugin-settings.lspsaga")
 reload("michael.plugin-settings.lsp")
-
---color scheme
-lvim.colorscheme = "rose-pine"
+reload("michael.core.colorscheme")
 
 --formatting and linting
 lvim.log.level = "info"

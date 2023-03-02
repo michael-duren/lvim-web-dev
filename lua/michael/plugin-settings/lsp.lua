@@ -6,3 +6,7 @@ end
 lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
+
+lspconfig["csharp_ls"].setup({
+	filetypes = { "cs" },
+})

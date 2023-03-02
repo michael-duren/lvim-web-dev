@@ -12,7 +12,7 @@ require("rose-pine").setup({
 	groups = {
 		background = "base",
 		panel = "base",
-		border = "base",
+		border = "muted",
 		comment = "muted",
 		link = "iris",
 		punctuation = "subtle",

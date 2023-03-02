@@ -3,7 +3,8 @@ lvim.leader = "space"
 
 -- write(save) with control S
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-
+-- quit with control Q
+lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 --buffers mapped to behave like vs code
 lvim.keys.normal_mode["<C-w>"] = ":bd<CR>" -- close current split window
 lvim.keys.normal_mode["<C-]>"] = ":bn<CR>" -- close current split window
@@ -16,6 +17,7 @@ lvim.keys.normal_mode["<leader>se"] = "<C-w>=" -- make split windows equal width
 lvim.keys.normal_mode["<leader>sx"] = ":close<CR>" -- close current split window
 
 lvim.keys.normal_mode["<leader>sm"] = ":MaximizerToggle<CR>" -- toggle split window maximization
+
 -- scroll horizontally
 lvim.keys.normal_mode["<A-l>"] = { "zl" }
 lvim.keys.normal_mode["<A-h>"] = { "zh" }

@@ -6,15 +6,8 @@ lvim.plugins = {
 	--colorschemes
 	{ "lunarvim/colorschemes" },
 	{ "rose-pine/neovim" },
-	-- optional
-	-- { "rafamadriz/neon" },
-	-- { "ChristianChiarulli/nvcode-color-schemes.vim" },
-	-- { "Mofiqul/vscode.nvim" },
-	-- { "folke/tokyonight.nvim" },
-	-- { "arcticicestudio/nord-vim" },
-	-- { "mfussenegger/nvim-jdtls" },
-	-- { "tomlion/vim-solidity" },
-	-- { "catppuccin/nvim" },
+
+	{ "christoomey/vim-tmux-navigator" }, -- tmux & split window navigation
 
 	{ "windwp/nvim-ts-autotag" }, -- auto tags
 
@@ -42,7 +35,7 @@ lvim.plugins = {
 	},
 	{ "onsails/lspkind.nvim" },
 
-	--lsp sage for TS
+	--lsp sage
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",

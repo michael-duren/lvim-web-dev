@@ -1,28 +1,23 @@
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 
--- write(save) with control S
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- quit with control Q
-lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
---buffers mapped to behave like vs code
-lvim.keys.normal_mode["<C-w>"] = ":bd<CR>" -- close current split window
-lvim.keys.normal_mode["<C-]>"] = ":bn<CR>" -- close current split window
-lvim.keys.normal_mode["<C-[>"] = ":bp<CR>" -- close current split window
+-- to be have like mac os
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- s for save
+lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- q for quit
+lvim.keys.normal_mode["<C-w>"] = ":bd<CR>" -- w for close buffer (window)
 
 -- splitting windows
 lvim.keys.normal_mode["<leader>sv"] = "<C-w>v" -- split window vertically
 lvim.keys.normal_mode["<leader>s-"] = "<C-w>s" -- split window horizontally
 lvim.keys.normal_mode["<leader>se"] = "<C-w>=" -- make split windows equal width & height
 lvim.keys.normal_mode["<leader>sx"] = ":close<CR>" -- close current split window
-
 lvim.keys.normal_mode["<leader>sm"] = ":MaximizerToggle<CR>" -- toggle split window maximization
 
 -- scroll horizontally
 lvim.keys.normal_mode["<A-l>"] = { "zl" }
 lvim.keys.normal_mode["<A-h>"] = { "zh" }
 
---keep curson in the middle of the screen
+--keep curson in the middle of the screen while jumping
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
@@ -30,7 +25,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- remap to lsp-saga
 lvim.lsp.buffer_mappings.normal_mode["K"] = { ":Lspsaga peek_definition<CR>" } -- peek def
-lvim.lsp.buffer_mappings.normal_mode["gd"] = { ":Lspsaga goto_definition<CR>" } -- go to def
+lvim.lsp.buffer_mappings.normal_mode["Gd"] = { ":Lspsaga goto_definition<CR>" } -- go to def
 
 -- lspsaga maps
 lvim.lsp.buffer_mappings.normal_mode["<leader>rn"] = { ":Lspsaga rename<CR>" } -- rename symbol

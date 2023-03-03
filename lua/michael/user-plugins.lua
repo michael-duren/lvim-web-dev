@@ -13,6 +13,8 @@ lvim.plugins = {
 
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 
+	{ "xiyaowong/nvim-transparent" }, -- toggle transparency
+
 	{ "szw/vim-maximizer" }, -- maximizes and restores current window
 
 	{

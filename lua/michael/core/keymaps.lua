@@ -1,7 +1,7 @@
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 
--- to be have like mac os
+-- to behave like mac os
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- s for save
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- q for quit
 lvim.keys.normal_mode["<C-w>"] = ":bd<CR>" -- w for close buffer (window)
@@ -41,8 +41,5 @@ lvim.lsp.buffer_mappings.normal_mode["<leader>rf"] = { ":TypescriptRenameFile<CR
 lvim.lsp.buffer_mappings.normal_mode["<leader>oi"] = { "TypescriptOrganizeImports<CR>" } -- organize imports
 lvim.lsp.buffer_mappings.normal_mode["<leader>ru"] = { ":TypescriptRemoveUnused<CR>" }
 
--- remap C \
--- disable completely
-lvim.keys.normal_mode["<C-\\>"] = ""
--- define a new behavior
-lvim.keys.normal_mode["<C-\\>"] = ":ToggleTerm<cr>"
+-- transparent
+vim.keymap.set("n", "tt", ":TransparentToggle<CR>")

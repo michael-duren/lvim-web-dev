@@ -40,3 +40,9 @@ lvim.lsp.buffer_mappings.normal_mode["]d"] = { ":Lspsaga diagnostic_jump_next<CR
 lvim.lsp.buffer_mappings.normal_mode["<leader>rf"] = { ":TypescriptRenameFile<CR>" } -- rename ts files and imports
 lvim.lsp.buffer_mappings.normal_mode["<leader>oi"] = { "TypescriptOrganizeImports<CR>" } -- organize imports
 lvim.lsp.buffer_mappings.normal_mode["<leader>ru"] = { ":TypescriptRemoveUnused<CR>" }
+
+-- remap C \
+-- disable completely
+lvim.keys.normal_mode["<C-\\>"] = ""
+-- define a new behavior
+lvim.keys.normal_mode["<C-\\>"] = ":ToggleTerm<cr>"

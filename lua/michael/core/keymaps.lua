@@ -21,6 +21,9 @@ lvim.keys.normal_mode["<A-h>"] = { "zh" }
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- restart LSP
+vim.keymap.set("n", "<C-r>", ":LspRestart<CR>")
+
 -- Plugin
 
 -- remap to lsp-saga

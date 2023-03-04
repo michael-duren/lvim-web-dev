@@ -1,5 +1,5 @@
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+	-- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 	--primeagen practice game
 	{ "ThePrimeagen/vim-be-good" },
 
@@ -7,7 +7,8 @@ lvim.plugins = {
 	{ "lunarvim/colorschemes" },
 	{ "rose-pine/neovim" },
 
-	{ "christoomey/vim-tmux-navigator" }, -- tmux & split window navigation
+	-- conflicting with other plugins
+	-- { "christoomey/vim-tmux-navigator" }, -- tmux & split window navigation
 
 	{ "windwp/nvim-ts-autotag" }, -- auto tags
 

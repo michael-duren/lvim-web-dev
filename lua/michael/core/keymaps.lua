@@ -22,7 +22,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- restart LSP
-vim.keymap.set("n", "<C-r>", ":LspRestart<CR>")
+vim.keymap.set("n", "<C-e>", ":LspRestart<CR>")
 
 -- Plugin
 
@@ -45,4 +45,4 @@ lvim.lsp.buffer_mappings.normal_mode["<leader>oi"] = { "TypescriptOrganizeImport
 lvim.lsp.buffer_mappings.normal_mode["<leader>ru"] = { ":TypescriptRemoveUnused<CR>" }
 
 -- transparent
-vim.keymap.set("n", "tt", ":TransparentToggle<CR>")
+vim.keymap.set("n", "Tt", ":TransparentToggle<CR>")

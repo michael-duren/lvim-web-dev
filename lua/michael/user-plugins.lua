@@ -10,13 +10,21 @@ lvim.plugins = {
 	-- conflicting with other plugins
 	-- { "christoomey/vim-tmux-navigator" }, -- tmux & split window navigation
 
-	{ "windwp/nvim-ts-autotag" }, -- auto tags
+	--	auto tags
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 
 	{ "xiyaowong/nvim-transparent" }, -- toggle transparency
 
 	{ "szw/vim-maximizer" }, -- maximizes and restores current window
+
+	{ "mrjones2014/nvim-ts-rainbow" },
 
 	{
 		"jose-elias-alvarez/typescript.nvim",

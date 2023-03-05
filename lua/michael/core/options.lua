@@ -20,7 +20,9 @@ lvim.builtin.nvimtree.setup.view.width = 35
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
+-- treesitter options
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- always installed on startup, useful for parsers without a strict filetype
 lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex" }

@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+vim.opt.nrformats = vim.opt.nrformats - "octal"
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true

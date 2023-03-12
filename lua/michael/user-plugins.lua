@@ -17,6 +17,16 @@ lvim.plugins = {
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	-- tailwind-colors
+	{
+		"themaxmarchuk/tailwindcss-colors.nvim",
+		-- load only on require("tailwindcss-colors")
+		-- run the setup function after plugin is loaded
+		config = function()
+			-- pass config options here (or nothing to use defaults)
+			require("tailwindcss-colors").setup()
+		end,
+	},
 
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 

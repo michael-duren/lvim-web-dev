@@ -7,8 +7,8 @@ lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
-lspconfig["csharp_ls"].setup({
-	filetypes = { "cs" },
+lspconfig["tailwindcss"].setup({
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 --formatting and linting
@@ -39,7 +39,8 @@ linters.setup({
 		args = { "--severity", "warning" },
 	},
 	{
-		command = "eslint",
+		only_local = { ".eslintrc.json", ".eslintrc.js", "eslintrc.mjs" },
+		command = "eslint_d",
 		filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 	},
 })

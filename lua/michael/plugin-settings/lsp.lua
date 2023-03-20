@@ -3,12 +3,16 @@ if not lspconfig_status then
 	return
 end
 
+lspconfig["sqls"].setup({
+	filetypes = { "sql" },
+})
+
 lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 lspconfig["tailwindcss"].setup({
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+	filetypes = { "html", "typescriptreact", "javascriptreact", "svelte" },
 })
 
 --formatting and linting
@@ -29,6 +33,10 @@ formatters.setup({
 	{
 		command = "csharpier",
 		filetypes = { "cs" },
+	},
+	{
+		command = "sql-formatter",
+		filetypes = { "sql" },
 	},
 })
 local linters = require("lvim.lsp.null-ls.linters")

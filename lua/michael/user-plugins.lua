@@ -55,6 +55,7 @@ lvim.plugins = {
 		end,
 	},
 	{ "onsails/lspkind.nvim" },
+	-- { "Hoffs/omnisharp-extended-lsp.nvim" },
 
 	--lsp sage
 	{

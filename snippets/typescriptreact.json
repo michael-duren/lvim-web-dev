@@ -1,0 +1,14 @@
+{
+  "Export Next Component": {
+    "prefix": "ednfc",
+    "body": [
+      "const $1 = () => {",
+      "return (",
+      " $2",
+      ");",
+      "};",
+      "",
+      "export default $1"
+    ]
+  }
+}

@@ -28,6 +28,8 @@ lvim.plugins = {
 		end,
 	},
 
+	{ "github/copilot.vim" },
+
 	{ "norcalli/nvim-colorizer.lua" }, -- colorize hex colors
 
 	{ "xiyaowong/nvim-transparent" }, -- toggle transparency
@@ -57,7 +59,7 @@ lvim.plugins = {
 	{ "onsails/lspkind.nvim" },
 	-- { "Hoffs/omnisharp-extended-lsp.nvim" },
 
-	--lsp sage
+	--lsp saga
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
@@ -66,4 +68,7 @@ lvim.plugins = {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	},
+
+	-- snippets
+	{ "dsznajder/vscode-es7-javascript-react-snippets", build = "yarn install --frozen-lockfile && yarn compile" },
 }
